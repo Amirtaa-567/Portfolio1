@@ -1,0 +1,881 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0B1026;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Navbar */
+
+.navbar{
+    background:rgba(0,0,0,.2);
+    backdrop-filter:blur(15px);
+}
+
+.navbar-brand{
+    color:#00D4FF !important;
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:20px;
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-content{
+    z-index:2;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-weight:800;
+}
+
+.hero h2{
+    color:#00D4FF;
+    margin-top:20px;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.2rem;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn-primary{
+    background:#6C63FF;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#574df5;
+}
+
+/* Planet */
+
+.planet{
+    width:300px;
+    height:300px;
+    background:linear-gradient(
+        45deg,
+        #00D4FF,
+        #6C63FF
+    );
+
+    border-radius:50%;
+
+    position:absolute;
+    right:10%;
+    top:20%;
+
+    box-shadow:
+    0 0 50px #00D4FF,
+    0 0 100px #6C63FF;
+
+    animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* Stars */
+
+#stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:blink 3s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:.2;
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.planet{
+    width:180px;
+    height:180px;
+}
+}
+
+/* ABOUT SECTION */
+
+.about-section{
+    min-height:100vh;
+    padding:120px 0;
+    position:relative;
+}
+
+.about-planet{
+    width:400px;
+    height:400px;
+    margin:auto;
+    position:relative;
+}
+
+.planet-core{
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+    linear-gradient(
+    135deg,
+    #00D4FF,
+    #6C63FF
+    );
+
+    box-shadow:
+    0 0 50px #00D4FF,
+    0 0 120px #6C63FF;
+
+    animation:
+    rotatePlanet 15s linear infinite;
+}
+
+@keyframes rotatePlanet{
+
+from{
+transform:
+translate(-50%,-50%)
+rotate(0deg);
+}
+
+to{
+transform:
+translate(-50%,-50%)
+rotate(360deg);
+}
+
+}
+
+.orbit{
+    width:340px;
+    height:340px;
+
+    border:
+    2px solid rgba(255,255,255,.1);
+
+    border-radius:50%;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    animation:
+    orbitRotate 20s linear infinite;
+}
+
+@keyframes orbitRotate{
+
+from{
+transform:
+translate(-50%,-50%)
+rotate(0deg);
+}
+
+to{
+transform:
+translate(-50%,-50%)
+rotate(360deg);
+}
+
+}
+
+.planet-tag{
+
+color:#00D4FF;
+
+font-size:14px;
+
+letter-spacing:3px;
+
+display:block;
+
+margin-bottom:10px;
+}
+
+.about-content h2{
+
+font-size:3rem;
+
+font-weight:700;
+
+margin-bottom:20px;
+}
+
+.about-content p{
+
+line-height:1.8;
+
+color:#d7d7d7;
+
+margin-bottom:20px;
+}
+
+/* CARDS */
+
+.about-cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:20px;
+
+margin-top:40px;
+}
+
+.info-card{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+padding:20px;
+
+border-radius:20px;
+
+backdrop-filter:blur(15px);
+
+transition:.4s;
+}
+
+.info-card:hover{
+
+transform:
+translateY(-10px);
+
+box-shadow:
+0 0 30px rgba(0,212,255,.3);
+}
+
+.info-card h4{
+
+color:#00D4FF;
+
+font-size:18px;
+}
+
+.info-card p{
+
+margin-top:10px;
+margin-bottom:0;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.about-planet{
+
+width:250px;
+height:250px;
+
+margin-bottom:50px;
+}
+
+.planet-core{
+
+width:150px;
+height:150px;
+}
+
+.orbit{
+
+width:220px;
+height:220px;
+}
+
+.about-content h2{
+
+font-size:2rem;
+}
+
+.about-cards{
+
+grid-template-columns:1fr;
+}
+
+}
+
+/* =====================
+   SKILLS GALAXY
+===================== */
+
+.skills-section{
+    min-height:100vh;
+    padding:120px 0;
+}
+
+.section-title span{
+    color:#00D4FF;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    margin-top:10px;
+}
+
+.section-title p{
+    color:#d0d0d0;
+}
+
+.solar-system{
+    position:relative;
+    width:700px;
+    height:700px;
+    margin:80px auto;
+}
+
+.sun{
+    width:140px;
+    height:140px;
+
+    border-radius:50%;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    background:
+    linear-gradient(
+    135deg,
+    #00D4FF,
+    #6C63FF
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    font-weight:700;
+
+    box-shadow:
+    0 0 50px #00D4FF,
+    0 0 100px #6C63FF;
+}
+
+.sun h3{
+    font-size:22px;
+}
+
+/* Orbit Rings */
+.orbit{
+    position:absolute;
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+}
+
+.orbit-1{
+width:220px;
+height:220px;
+animation:spin 12s linear infinite;
+}
+
+.orbit-2{
+width:280px;
+height:280px;
+animation:spin 16s linear infinite;
+}
+
+.orbit-3{
+width:340px;
+height:340px;
+animation:spin 20s linear infinite;
+}
+
+.orbit-4{
+width:400px;
+height:400px;
+animation:spin 24s linear infinite;
+}
+
+.orbit-5{
+width:460px;
+height:460px;
+animation:spin 28s linear infinite;
+}
+
+.orbit-6{
+width:520px;
+height:520px;
+animation:spin 32s linear infinite;
+}
+
+.orbit-7{
+width:580px;
+height:580px;
+animation:spin 36s linear infinite;
+}
+
+.orbit-8{
+width:640px;
+height:640px;
+animation:spin 40s linear infinite;
+}
+
+@keyframes spin{
+
+from{
+transform:
+translate(-50%,-50%)
+rotate(0deg);
+}
+
+to{
+transform:
+translate(-50%,-50%)
+rotate(360deg);
+}
+}
+
+/* Skill Planets */ 
+.planet-skill{
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+
+position:absolute;
+top:-35px;
+left:50%;
+
+transform:
+translateX(-50%);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:13px;
+font-weight:600;
+
+cursor:pointer;
+
+transition:.4s;
+}
+
+.planet-skill:hover{
+
+transform:
+translateX(-50%)
+scale(1.2);
+
+box-shadow:
+0 0 25px white;
+}
+
+.html{
+background:#ff6b35;
+}
+
+.css{
+background:#2965f1;
+}
+
+.js{
+background:#f7df1e;
+color:#000;
+}
+
+.react{
+background:#61dafb;
+color:#000;
+}
+
+.bootstrap{
+background:#7952b3;
+}
+
+.tailwind{
+background:#38bdf8;
+}
+
+.node{
+background:#3c873a;
+}
+
+.mongo{
+background:#4db33d;
+} 
+
+/*  */
+.skill-cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:25px;
+
+margin-top:60px;
+}
+
+.skill-card{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+padding:25px;
+
+border-radius:20px;
+
+backdrop-filter:blur(15px);
+
+transition:.4s;
+}
+
+.skill-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 30px rgba(0,212,255,.3);
+}
+
+.skill-card h4{
+color:#00D4FF;
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+
+.solar-system{
+
+width:350px;
+height:350px;
+}
+
+.sun{
+
+width:90px;
+height:90px;
+}
+
+.sun h3{
+
+font-size:14px;
+}
+
+.planet-skill{
+
+width:45px;
+height:45px;
+
+font-size:9px;
+}
+
+.skill-cards{
+
+grid-template-columns:1fr;
+}
+
+.section-title h2{
+
+font-size:2rem;
+}
+}
+
+/* ======================
+   PROJECTS SECTION
+====================== */
+
+.projects-section{
+
+min-height:100vh;
+
+padding:120px 0;
+
+position:relative;
+}
+
+.projects-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+margin-top:80px;
+}
+
+/* Space Station Cards */ 
+.project-card{
+
+position:relative;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+border-radius:25px;
+
+overflow:hidden;
+
+backdrop-filter:blur(20px);
+
+transition:.5s;
+
+min-height:300px;
+}
+
+.project-card:hover{
+
+transform:
+translateY(-15px)
+rotateX(5deg);
+
+box-shadow:
+0 0 40px rgba(0,212,255,.25);
+}
+
+/* Featured Project Glow */ 
+.featured{
+
+border:
+1px solid #00D4FF;
+}
+
+.project-glow{
+
+position:absolute;
+
+width:250px;
+height:250px;
+
+background:
+radial-gradient(
+circle,
+rgba(0,212,255,.4),
+transparent
+);
+
+top:-100px;
+right:-100px;
+} 
+
+/* Project Content */ 
+.project-content{
+
+padding:35px;
+
+position:relative;
+
+z-index:2;
+}
+
+.project-content h3{
+
+font-size:26px;
+
+margin-bottom:15px;
+}
+
+.project-content p{
+
+color:#cfcfcf;
+
+line-height:1.7;
+} 
+
+/* Tech Stack Chips */ 
+.tech-stack{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-top:25px;
+}
+
+.tech-stack span{
+
+padding:8px 14px;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.08);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+font-size:13px;
+} 
+/* Buttons */ 
+.project-buttons{
+
+margin-top:30px;
+
+display:flex;
+
+gap:15px;
+}
+
+.btn-space{
+
+padding:12px 25px;
+
+background:
+linear-gradient(
+135deg,
+#00D4FF,
+#6C63FF
+);
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+}
+
+.btn-outline-space{
+
+padding:12px 25px;
+
+border:
+1px solid #00D4FF;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:#00D4FF;
+} 
+
+/* Featured Badge */ 
+.badge-space{
+
+display:inline-block;
+
+padding:8px 16px;
+
+margin-bottom:20px;
+
+background:
+rgba(0,212,255,.15);
+
+border:
+1px solid #00D4FF;
+
+border-radius:50px;
+
+color:#00D4FF;
+
+font-size:12px;
+
+letter-spacing:2px;
+} 
+
+/* Add Initial Hidden State */ 
+.project-card{
+
+opacity:0;
+
+transform:
+translateY(80px);
+
+transition:all .8s ease;
+}
+
+.project-card.show{
+
+opacity:1;
+
+transform:
+translateY(0);
+}
