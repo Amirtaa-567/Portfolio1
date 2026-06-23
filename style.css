@@ -476,7 +476,7 @@ height:460px;
 animation:spin 28s linear infinite;
 }
 
-.orbit-6{
+/* .orbit-6{
 width:520px;
 height:520px;
 animation:spin 32s linear infinite;
@@ -492,7 +492,7 @@ animation:spin 36s linear infinite;
 width:640px;
 height:640px;
 animation:spin 40s linear infinite;
-}
+} */
 
 @keyframes spin{
 
@@ -564,11 +564,11 @@ background:#61dafb;
 color:#000;
 }
 
-.bootstrap{
+.c{
 background:#7952b3;
 }
 
-.tailwind{
+/* .tailwind{
 background:#38bdf8;
 }
 
@@ -578,7 +578,7 @@ background:#3c873a;
 
 .mongo{
 background:#4db33d;
-} 
+}  */
 
 /*  */
 .skill-cards{
